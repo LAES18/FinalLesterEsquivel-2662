@@ -28,6 +28,23 @@ public class Estudiante {
         this.calificacion = calificacion;
     }
 
+    public static void agregarEstudiantes(List<Estudiante> listaEstudiantes) {
+        for (int i = 1; i <= 5; i++) {
+            Estudiante estudiante = new Estudiante("Estudiante" + i, i * 10);
+            listaEstudiantes.add(estudiante);
+        }
+    }
 
+    public static void mostrarEstudiantes(List<Estudiante> listaEstudiantes) {
+        for (Estudiante estudiante : listaEstudiantes) {
+            System.out.println("Nombre: " + estudiante.getNombre() + " - Calificacion: " + estudiante.getCalificacion());
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Estudiante> listaEstudiantes = new ArrayList<>();
+        agregarEstudiantes(listaEstudiantes);
+        mostrarEstudiantes(listaEstudiantes);
+    }
 }
 
